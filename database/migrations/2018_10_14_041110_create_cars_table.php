@@ -15,15 +15,20 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('id_type');
             $table->string('name',15);
-            $table->string('type',10);
             $table->string('brand',15);
             $table->integer('qty')->unsigned();
             $table->integer('cost')->unsigned();
             $table->timestamps();
         });
-    }
 
+        Schema::create('type_cars', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('type',10);
+            $table->timestamps();
+        });
+    }
     /**
      * Reverse the migrations.
      *
@@ -32,5 +37,6 @@ class CreateCarsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('cars');
+        Schema::dropIfExists('type_cars');
     }
 }

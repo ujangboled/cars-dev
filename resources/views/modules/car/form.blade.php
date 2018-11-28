@@ -15,7 +15,8 @@
 
     <div class="form-group">
         <label for="" class="control-label">Type</label>
-        {!! Form::text('type', null, ['class' => 'form-control', 'id' => 'type']) !!}
+        <!-- {!! Form::text('id_type', null, ['class' => 'form-control', 'id' => 'id_type']) !!} -->
+        {!! Form::select('id_type', $get_type->all(), null, ['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -27,5 +28,6 @@
         <label for="" class="control-label">Price</label>
         {!! Form::number('cost', null, ['class' => 'form-control', 'id' => 'cost']) !!}
     </div>
+
 
 {!! Form::close() !!}

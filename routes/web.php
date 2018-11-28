@@ -18,6 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+// Route::get('/type', 'TypeCarsController@index')->name('type');
+//route of cars
 Route::resource('/cars', 'CarsController');
 Route::get('/table/cars', 'CarsController@dataTable')->name('table.Cars');
+//route of types
+Route::resource('/type', 'TypeCarsController');
+Route::get('/table/type', 'TypeCarsController@dataTable')->name('table.Type');
+ //route of User
+Route::resource('/user', 'UserController');
+
+Route::group(['prefix' => 'api'], function() 
+{
+    Route::get('address', 'UserController@getUserAddress');
+});
+         

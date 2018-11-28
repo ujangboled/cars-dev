@@ -1,4 +1,4 @@
-$('body').on('click', '.modal-show', function (event) {
+  $('body').on('click', '.modal-show', function (event) {
     event.preventDefault();
 
     var me = $(this),
@@ -20,13 +20,15 @@ $('body').on('click', '.modal-show', function (event) {
     $('#modal').modal('show');
 });
 
+$('#modal-btn-save').unbind('click');
+
 $('#modal-btn-save').click(function (event) {
     event.preventDefault();
-
+    $(this).find('input').val('');
     var form = $('#modal-body form'),
         url = form.attr('action'),
         method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
-
+    
     form.find('.help-block').remove();
     form.find('.form-group').removeClass('has-error');
 
@@ -124,3 +126,5 @@ $('body').on('click', '.btn-show', function (event) {
 
     $('#modal').modal('show');
 });
+
+

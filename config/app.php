@@ -173,6 +173,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Laravolt\Indonesia\ServiceProvider::class,
 
     ],
 
@@ -223,8 +224,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
-       'Html' => Collective\Html\HtmlFacade::class,
-       'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Indonesia' => Laravolt\Indonesia\Facade::class,
+
    
 
     ],

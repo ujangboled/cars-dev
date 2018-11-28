@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -67,7 +67,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class=""><a href="{{ route('cars.index') }}">Cars</a></li>            
+            <li class=""><a href="{{ route('type.index') }}">type</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           
@@ -97,16 +98,25 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('user.index') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('edit-form').submit();">
+                                        {{ __('Edit') }}
+                                    </a>
+                                    <br>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <form id="edit-form" action="{{ route('user.index') }}"  style="display: none;">
+                                   
+                                    </form>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
+                                     @csrf
                                     </form>
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
@@ -129,6 +139,7 @@
     </div> <!-- /container -->
 
     @include('layouts._modal')
+    
 
 
     <!-- Bootstrap core JavaScript
@@ -136,6 +147,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/angular.js') }}"></script>
+    
 
     <!-- Datatables -->
     <script src="{{ asset('assets/vendor/datatables/datatables.min.js') }}"></script>

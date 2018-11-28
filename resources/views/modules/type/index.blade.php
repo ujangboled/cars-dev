@@ -4,7 +4,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Datatable
-          <a href="{{ route('cars.create') }}" class="btn btn-success pull-right modal-show" style="margin-top: -8px;" title="Create User"><i class="icon-plus"></i> Create</a>
+          <a href="{{ route('type.create') }}" class="btn btn-success pull-right modal-show" style="margin-top: -8px;" title="Create Type"><i class="icon-plus"></i> Create</a>
       </h3>
     </div>
     <div class="panel-body">
@@ -12,11 +12,7 @@
               <thead>
                   <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Merk</th>
                       <th>Type</th>
-                      <th>QTY</th>
-                      <th>Price</th>
                       <th>Action</th>
                   </tr>
               </thead>
@@ -26,11 +22,7 @@
               <tfoot>
                   <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Merk</th>
                       <th>Type</th>
-                      <th>QTY</th>
-                      <th>Price</th>
                       <th></th>
                   </tr>
               </tfoot>
@@ -45,14 +37,10 @@
             responsive: true,
             processing: true,
             serverSide: true,
-            ajax: "{{ route('table.Cars') }}",
+            ajax: "{{ route('table.Type') }}",
             columns: [
                 {data: 'DT_Row_Index', name: 'id'},
-                {data: 'name', name: 'name'},
-                {data: 'brand', name: 'brand'},
                 {data: 'type', name: 'type'},
-                {data: 'qty', name: 'qty'},
-                {data: 'cost', name: 'cost'},
                 {data: 'action', name: 'action'}
             ]
         });

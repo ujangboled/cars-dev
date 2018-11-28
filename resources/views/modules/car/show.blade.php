@@ -12,7 +12,7 @@
         <td>{{ $model->id }}</td>
         <td>{{ $model->name }}</td>
         <td>{{ $model->brand }}</td>
-        <td>{{ $model->type }}</td>
+        <td>{{ $model->id_type }}</td>
         <td>{{ $model->qty }}</td>
         <td>{{ $model->cost }}</td>
         <th></th>

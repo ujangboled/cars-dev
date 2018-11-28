@@ -2,10 +2,9 @@
 
 namespace App;
 use Illuminate\Notifications\Notifiable;
-
 use Illuminate\Database\Eloquent\Model;
 
-class Cars extends Model
+class Type_cars extends Model
 {
     use Notifiable;
 
@@ -15,7 +14,7 @@ class Cars extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'id_type', 'brand', 'qty', 'cost',
+       'type'
     ];
 
     /**
